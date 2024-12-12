@@ -39,15 +39,15 @@ const mockVSCodeAPI = (): VSCodeAPI => ({
 // 获取 VSCode API 的函数
 const getVSCodeAPI = (): VSCodeAPI => {
   try {
-    if (typeof acquireVsCodeApi === "function") {
+    if (typeof window.acquireVsCodeApi === 'function') {
       // 使用 let 避免重复获取 API
       if (!(window as any).vscodeApi) {
-        (window as any).vscodeApi = acquireVsCodeApi();
+        (window as any).vscodeApi = window.acquireVsCodeApi();
       }
       return (window as any).vscodeApi;
     }
   } catch (error) {
-    console.warn("Failed to acquire VSCode API:", error);
+    console.warn('Failed to acquire VSCode API:', error);
   }
   return mockVSCodeAPI();
 };

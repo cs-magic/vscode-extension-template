@@ -137,3 +137,14 @@ key_points = """
 - 正确绑定方法上下文
 - 改进错误处理
 """
+
+[[rounds]]
+number = 14
+time = "2024-12-12T11:33:40+08:00"
+query_essence = "添加 VSCode API 类型声明"
+key_points = """
+- 添加全局 acquireVsCodeApi 类型声明
+- 优化 WebviewMessage 接口
+- 更新 VSCodeAPI 类型定义
+- 修复类型错误
+"""
