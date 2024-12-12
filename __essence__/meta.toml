@@ -17,3 +17,4 @@ abstract = """
 "004" = { slug = "readme_update", abstract = "更新项目文档以反映最新修改" }
 "005" = { slug = "build_error_resolution", abstract = "解决 pnpm build 过程中的 TypeScript 编译错误" }
 "006" = { slug = "webview_type_definition", abstract = "修复 WebviewMessage 接口类型定义问题" }
+"007" = { slug = "webview_template_optimization", abstract = "大幅优化 packages/webview 的用户界面和交互体验设计" }

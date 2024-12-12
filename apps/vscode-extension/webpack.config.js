@@ -1,7 +1,7 @@
 const path = require("path");
 
 const distDir = path.resolve(__dirname, "dist");
-console.log("Dist directory:", distDir); // 打印输出目录以便确认
+console.log("Dist directory:", distDir);
 
 /** @type {import('webpack').Configuration} */
 const extensionConfig = {
@@ -76,7 +76,18 @@ const webviewConfig = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            },
+          },
+          {
+            loader: "postcss-loader",
+          },
+        ],
       },
     ],
   },
