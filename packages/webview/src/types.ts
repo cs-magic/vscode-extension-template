@@ -1,5 +1,7 @@
 export interface WebviewMessage {
-  type: string;
+  type?: string;
+  command?: 'alert' | 'error';
+  text?: string;
   payload?: any;
 }
 
