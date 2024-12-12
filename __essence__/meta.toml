@@ -1,0 +1,14 @@
+name = "VSCode Extension Template"
+
+version = "1.0.0"
+
+abstract = """
+一个用于快速创建和调试 VSCode 扩展的模板项目。该项目参考 YAAC 项目的最佳实践，重点解决 F5 调试配置问题，并提供完整的开发工具链支持。主要目标包括：
+1. 优化项目结构和构建配置
+2. 完善调试配置和启动设置
+3. 提供标准化的开发工作流
+4. 集成必要的开发工具和类型支持
+"""
+
+[conversations]
+"001" = { slug = "debug_config_optimization", abstract = "优化 VSCode 扩展的调试配置" }

@@ -1,0 +1,12 @@
+version = "1.0.0"
+
+[[rounds]]
+number = 1
+time = "2024-12-12T10:16:51+08:00"
+query_essence = "参考 YAAC 项目结构重构模板，解决 F5 调试问题"
+key_points = """
+- 将 .vscode 配置移到根目录，统一调试配置管理
+- 优化了调试和任务配置，添加环境变量和展示设置
+- 更新了 package.json 的脚本命令和 turbo.json 的构建配置
+- 添加了 watch 相关的配置以支持持续构建
+"""

@@ -4,21 +4,22 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "out/**"]
+      "outputs": ["dist/**"]
     },
     "dev": {
+      "dependsOn": ["^build"],
       "cache": false,
       "persistent": true
     },
-    "lint": {
-      "outputs": []
+    "watch": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
     },
+    "lint": {},
     "test": {
-      "dependsOn": ["build"],
-      "inputs": ["src/**/*.ts", "test/**/*.ts"]
-    },
-    "clean": {
-      "cache": false
+      "dependsOn": ["^build"],
+      "inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
     }
   }
 }
