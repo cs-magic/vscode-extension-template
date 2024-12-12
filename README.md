@@ -1,5 +1,12 @@
 # VS Code Extension Template
 
+<!-- toc -->
+
+[核心优势](#核心优势) • [特性](#特性) • [项目结构](#项目结构) • [快速开始](#快速开始) • [开发指南](#开发指南) • [常见问题](#常见问题) • [许可证](#许可证)
+
+<!-- tocstop -->
+
+
 一个现代化的 VS Code 插件开发模板，基于 [YAAC](https://github.com/cs-magic/YAAC) 项目的技术栈，集成了：
 
 - 🏃 Turborepo - 高性能的构建系统

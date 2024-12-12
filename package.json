@@ -19,6 +19,7 @@
     "watch": "turbo watch --filter=vscode-extension..."
   },
   "devDependencies": {
+    "@cs-magic/md-toc": "^0.5.2",
     "@types/node": "^20.10.0",
     "@typescript-eslint/eslint-plugin": "^6.13.0",
     "@typescript-eslint/parser": "^6.13.0",
