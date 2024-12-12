@@ -17,9 +17,9 @@ export const Button = ({
   const baseStyles = 'font-medium rounded focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors duration-200';
   
   const variantStyles = {
-    primary: `bg-indigo-600 text-white hover:bg-indigo-700 focus:ring-indigo-500 
+    primary: `bg-vscode-button-background text-vscode-button-foreground hover:bg-vscode-button-hover
       ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`,
-    secondary: `bg-gray-200 text-gray-700 hover:bg-gray-300 focus:ring-gray-500
+    secondary: `bg-vscode-button-secondary text-vscode-foreground hover:bg-vscode-button-secondary-hover
       ${disabled ? 'opacity-50 cursor-not-allowed' : ''}`,
   };
 

@@ -1,0 +1,40 @@
+/* 默认暗色主题变量 */
+:root {
+  /* 这些变量会被 JavaScript 动态覆盖 */
+  --vscode-editor-background: #1e1e1e;
+  --vscode-editor-foreground: #d4d4d4;
+  --vscode-foreground: #cccccc;
+  --vscode-button-background: #0e639c;
+  --vscode-button-foreground: #ffffff;
+  --vscode-button-hoverBackground: #1177bb;
+  --vscode-button-secondaryBackground: #3a3d41;
+  --vscode-button-secondaryHoverBackground: #45494e;
+  --vscode-input-background: #3c3c3c;
+  --vscode-input-foreground: #cccccc;
+  --vscode-input-border: #3c3c3c;
+  --vscode-input-placeholderForeground: #cccccc80;
+  --vscode-dropdown-background: #3c3c3c;
+  --vscode-dropdown-foreground: #f0f0f0;
+  --vscode-dropdown-border: #3c3c3c;
+  --vscode-focusBorder: #007fd4;
+}
+
+/* 亮色主题 */
+[data-vscode-theme="light"] {
+  --vscode-editor-background: #ffffff;
+  --vscode-editor-foreground: #333333;
+  --vscode-foreground: #333333;
+  --vscode-button-background: #007acc;
+  --vscode-button-foreground: #ffffff;
+  --vscode-button-hoverBackground: #0098ff;
+  --vscode-button-secondaryBackground: #f3f3f3;
+  --vscode-button-secondaryHoverBackground: #e6e6e6;
+  --vscode-input-background: #ffffff;
+  --vscode-input-foreground: #333333;
+  --vscode-input-border: #cecece;
+  --vscode-input-placeholderForeground: #767676;
+  --vscode-dropdown-background: #ffffff;
+  --vscode-dropdown-foreground: #333333;
+  --vscode-dropdown-border: #cecece;
+  --vscode-focusBorder: #0090f1;
+}

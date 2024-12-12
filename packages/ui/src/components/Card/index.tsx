@@ -8,10 +8,10 @@ export interface CardProps {
 
 export const Card = ({ title, children, className = '' }: CardProps) => {
   return (
-    <div className={`bg-white rounded-xl shadow-md overflow-hidden ${className}`}>
+    <div className={`bg-vscode-editor-background border border-vscode-input-border rounded-lg overflow-hidden ${className}`}>
       {title && (
-        <div className="px-6 py-4 border-b border-gray-200">
-          <h3 className="text-lg font-medium text-gray-900">{title}</h3>
+        <div className="px-4 py-3 border-b border-vscode-input-border">
+          <h3 className="text-base font-medium text-vscode-foreground">{title}</h3>
         </div>
       )}
       {children}

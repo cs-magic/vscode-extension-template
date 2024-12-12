@@ -15,7 +15,7 @@ export const Spinner = ({ size = 'md', className = '' }: SpinnerProps) => {
   return (
     <div className={`${sizeStyles[size]} ${className}`}>
       <svg
-        className="animate-spin text-white"
+        className="animate-spin text-vscode-button-foreground"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

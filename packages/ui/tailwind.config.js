@@ -6,23 +6,48 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-          950: '#1e1b4b',
+        vscode: {
+          // VSCode default theme colors
+          'foreground': 'var(--vscode-foreground)',
+          'background': 'var(--vscode-editor-background)',
+          'editor': {
+            'background': 'var(--vscode-editor-background)',
+            'foreground': 'var(--vscode-editor-foreground)',
+          },
+          'button': {
+            'background': 'var(--vscode-button-background)',
+            'foreground': 'var(--vscode-button-foreground)',
+            'hover': 'var(--vscode-button-hoverBackground)',
+            'secondary': 'var(--vscode-button-secondaryBackground)',
+            'secondary-hover': 'var(--vscode-button-secondaryHoverBackground)',
+          },
+          'input': {
+            'background': 'var(--vscode-input-background)',
+            'foreground': 'var(--vscode-input-foreground)',
+            'border': 'var(--vscode-input-border)',
+            'placeholder': 'var(--vscode-input-placeholderForeground)',
+          },
+          'dropdown': {
+            'background': 'var(--vscode-dropdown-background)',
+            'foreground': 'var(--vscode-dropdown-foreground)',
+            'border': 'var(--vscode-dropdown-border)',
+          },
         },
+      },
+      borderColor: {
+        DEFAULT: 'var(--vscode-input-border)',
+      },
+      ringColor: {
+        DEFAULT: 'var(--vscode-focusBorder)',
+      },
+      ringOffsetColor: {
+        DEFAULT: 'var(--vscode-editor-background)',
       },
     },
   },
   plugins: [
-    require('@tailwindcss/forms'),
+    require('@tailwindcss/forms')({
+      strategy: 'class',
+    }),
   ],
 };
