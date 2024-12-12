@@ -9,7 +9,8 @@ export class WebviewManager {
 
   constructor(context: vscode.ExtensionContext) {
     this.context = context;
-    this.webviewPath = path.join(context.extensionPath, 'webview', 'dist');
+    // 使用新的 UI 包路径
+    this.webviewPath = path.join(context.extensionPath, 'node_modules', '@template', 'vscode-extension-ui', 'dist');
   }
 
   public show() {
@@ -61,7 +62,25 @@ export class WebviewManager {
 
   private getWebviewContent() {
     const htmlPath = path.join(this.webviewPath, 'index.html');
-    const htmlContent = fs.readFileSync(htmlPath, 'utf-8');
+    let htmlContent;
+    try {
+      htmlContent = fs.readFileSync(htmlPath, 'utf-8');
+    } catch (error) {
+      return `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extension WebView</title>
+</head>
+<body>
+  <div id="root">
+    <h1>Failed to load UI</h1>
+    <p>Error: ${error instanceof Error ? error.message : String(error)}</p>
+  </div>
+</body>
+</html>`;
+    }
 
     // Get paths to scripts and styles
     const scriptPathOnDisk = vscode.Uri.file(

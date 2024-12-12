@@ -1,16 +1,59 @@
 import * as vscode from 'vscode';
-import { WebviewManager } from './webview/WebviewManager';
+import { WebviewProvider } from '@template/webview';
+
+const log = {
+  info: (...args: any[]) => {
+    console.log('[Extension]', ...args);
+  },
+  error: (...args: any[]) => {
+    console.error('[Extension]', ...args);
+    vscode.window.showErrorMessage(args.join(' '));
+  }
+};
 
 export function activate(context: vscode.ExtensionContext) {
-  console.log('Extension is now active!');
+  log.info('Extension is now active!');
 
-  const webviewManager = new WebviewManager(context);
+  try {
+    let disposable = vscode.commands.registerCommand('extension.showWebview', () => {
+      try {
+        const panel = vscode.window.createWebviewPanel(
+          'templateWebview',
+          'Template Webview',
+          vscode.ViewColumn.One,
+          {
+            enableScripts: true,
+            retainContextWhenHidden: true
+          }
+        );
 
-  let disposable = vscode.commands.registerCommand('extension.showWebview', () => {
-    webviewManager.show();
-  });
+        panel.webview.html = getWebviewContent();
+      } catch (error) {
+        log.error('Failed to show webview:', error);
+      }
+    });
 
-  context.subscriptions.push(disposable);
+    context.subscriptions.push(disposable);
+  } catch (error) {
+    log.error('Failed to activate extension:', error);
+  }
 }
 
-export function deactivate() {}
+function getWebviewContent() {
+  return `<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Template Webview</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script src="${WebviewProvider}"></script>
+    </body>
+    </html>`;
+}
+
+export function deactivate() {
+  log.info('Extension is deactivating...');
+}

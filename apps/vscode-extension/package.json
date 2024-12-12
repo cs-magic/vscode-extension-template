@@ -23,16 +23,16 @@
   },
   "scripts": {
     "vscode:prepublish": "pnpm run build",
-    "build": "webpack --mode production && cd webview && pnpm build",
-    "watch": "webpack --mode development --watch",
-    "dev": "concurrently \"webpack --mode development --watch\" \"cd webview && pnpm dev\"",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch --progress",
+    "dev": "webpack --mode development --watch --progress",
     "test": "node ./out/test/runTest.js",
     "lint": "eslint src --ext ts",
-    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf out && cd webview && pnpm clean"
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf out"
   },
   "dependencies": {
-    "@template/core": "workspace:*",
-    "@template/ui": "workspace:*"
+    "@template/vscode-extension-ui": "workspace:*",
+    "@template/webview": "workspace:*"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",

@@ -8,10 +8,12 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'extension.js',
-    libraryTarget: 'commonjs2'
+    libraryTarget: 'commonjs2',
+    devtoolModuleFilenameTemplate: '../[resource-path]'
   },
   externals: {
-    vscode: 'commonjs vscode'
+    vscode: 'commonjs vscode',
+    '@template/webview': 'commonjs @template/webview'
   },
   resolve: {
     extensions: ['.ts', '.js']
@@ -23,14 +25,23 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: 'ts-loader'
+            loader: 'ts-loader',
+            options: {
+              compilerOptions: {
+                sourceMap: true
+              }
+            }
           }
         ]
       }
     ]
   },
-  devtool: 'nosources-source-map',
+  devtool: 'source-map',
   infrastructureLogging: {
     level: "log",
   },
+  stats: {
+    preset: 'errors-warnings',
+    colors: true
+  }
 };
