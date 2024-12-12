@@ -14,3 +14,4 @@ abstract = """
 "001" = { slug = "debug_config_optimization", abstract = "优化 VSCode 扩展的调试配置" }
 "002" = { slug = "dependency_resolution", abstract = "解决模块依赖和构建配置问题" }
 "003" = { slug = "webview_uiux_enhancement", abstract = "优化 @packages/webview 的用户界面和交互体验" }
+"004" = { slug = "readme_update", abstract = "更新项目文档以反映最新修改" }
