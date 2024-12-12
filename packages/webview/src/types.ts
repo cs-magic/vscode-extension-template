@@ -1,17 +1,18 @@
 export interface WebviewMessage {
-  command: string;
-  text?: string;
-  [key: string]: any;
+  type: string;
+  payload?: any;
 }
 
 export interface VSCodeAPI {
-  postMessage(message: WebviewMessage): void;
-  setState(state: any): void;
-  getState(): any;
+  postMessage: (message: WebviewMessage) => void;
+  setState: (state: any) => void;
+  getState: () => any;
 }
 
 declare global {
   interface Window {
-    acquireVsCodeApi(): VSCodeAPI;
+    acquireVsCodeApi: () => VSCodeAPI;
   }
 }
+
+export {};

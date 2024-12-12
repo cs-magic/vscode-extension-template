@@ -31,19 +31,24 @@
     "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf out"
   },
   "dependencies": {
-    "@template/vscode-extension-ui": "workspace:*",
-    "@template/webview": "workspace:*"
+    "@template/webview": "workspace:*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
     "@types/mocha": "^10.0.1",
     "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "@types/vscode": "^1.80.0",
     "@types/webpack": "^5.28.0",
     "@vscode/test-electron": "^2.3.8",
     "concurrently": "^8.2.2",
+    "css-loader": "^6.8.1",
     "glob": "^10.3.10",
     "mocha": "^10.2.0",
+    "style-loader": "^3.3.3",
     "ts-loader": "^9.5.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4"

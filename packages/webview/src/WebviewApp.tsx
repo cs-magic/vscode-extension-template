@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Card } from '@template/ui';
-import { MessageBus, StateManager } from '@template/core';
+
 import { useVSCode } from './VSCodeProvider';
 
 export interface WebviewAppProps {

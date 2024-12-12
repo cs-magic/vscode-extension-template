@@ -119,3 +119,37 @@ key_points = """
 - 所有 UI 相关功能已迁移到 packages/webview
 - 完成了从应用级别到库级别的重构
 """
+
+[[rounds]]
+number = 12
+time = "2024-12-12T10:43:34+08:00"
+query_essence = "修复打包配置"
+key_points = """
+- 创建了独立的 webview 入口点
+- 配置了双入口的 webpack 构建
+- 更新了扩展以正确加载 webview 资源
+- 添加了必要的 React 和样式加载器依赖
+"""
+
+[[rounds]]
+number = 13
+time = "2024-12-12T10:49:36+08:00"
+query_essence = "删除旧的 WebviewManager"
+key_points = """
+- 删除了旧的 WebviewManager.ts
+- 其功能已被 @template/webview 包替代
+- 现在使用更清晰的架构：
+  1. extension.ts 负责创建 webview
+  2. VSCodeProvider 处理通信
+  3. WebviewApp 提供 UI
+"""
+
+[[rounds]]
+number = 14
+time = "2024-12-12T10:51:55+08:00"
+query_essence = "删除旧的 webview 入口点"
+key_points = """
+- 删除了 apps/vscode-extension/src/webview 目录
+- 更新了 webpack 配置，使用 @template/webview 包的入口点
+- 现在所有 webview 相关代码都在 packages/webview 中
+"""
