@@ -15,3 +15,5 @@ abstract = """
 "002" = { slug = "dependency_resolution", abstract = "解决模块依赖和构建配置问题" }
 "003" = { slug = "webview_uiux_enhancement", abstract = "优化 @packages/webview 的用户界面和交互体验" }
 "004" = { slug = "readme_update", abstract = "更新项目文档以反映最新修改" }
+"005" = { slug = "build_error_resolution", abstract = "解决 pnpm build 过程中的 TypeScript 编译错误" }
+"006" = { slug = "webview_type_definition", abstract = "修复 WebviewMessage 接口类型定义问题" }
